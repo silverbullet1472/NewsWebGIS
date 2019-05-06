@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>WebGIS Course Design</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<script type="text/javascript" src="assets/js/echartsutil1.js"></script>
+		<script type="text/javascript" src="assets/js/echartsutil2.js"></script>
+		<script type="text/javascript" src="assets/js/echartsutil3.js"></script>
+		<script type="text/javascript" src="assets/js/echartsutil4.js"></script>
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	    <script>L_PREFER_CANVAS=false; L_NO_TOUCH=false; L_DISABLE_3D=false;</script>
+	    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.4.0/dist/leaflet.js"></script>
+	    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+	  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.4.0/dist/leaflet.css"/>
+	   <script src="https://leaflet.github.io/Leaflet.heat/dist/leaflet-heat.js"></script>
+
+   		<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+		<style type="text/css">
+        #mapvmap, #echartmap, #echartscatemap, #foliummap{
+            height: 500px;
+        }
+    	</style>
+	</head>
+	<body>
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<span class="icon fa-diamond"></span>
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1>WebGIS 新闻热点可视化</h1>
+								<p>WebGIS与地理信息服务课程设计，数据来源：<a href="https://html5up.net">新浪滚动新闻榜</a>，<a href="https://html5up.net">今日头条</a>.</p>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#intro">Intro</a></li>
+								<li><a href="#mapv">MapV</a></li>
+								<li><a href="#folium">Folium</a></li>
+								<li><a href="#echart">Echarts</a></li>
+								<li><a href="#echartcate">EchartsCate</a></li>
+								<li><a href="#wordcloud">WordCloud</a></li>
+								<li><a href="#d3">D3</a></li>
+								<li><a href="#about">About</a></li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+						<!-- Intro -->
+							<article id="intro">
+								<h2 class="major">介绍 | Intro</h2>
+								<span class="image main"><img style="height: 30%;width: 30%" src="images/intro.png" alt="" /></span>
+								<p>随着网络信息来源的扩展和信息量的不断壮大，网络媒介技术下的网络社会意向更加复杂，网络舆情变幻莫测。借助GIS 地理可视化技术进行知识挖掘是有益的探索，而借助GIS的地理分析技术则可以预测、监控舆情的发展情况，具有极高的现实价值。在此背景下，本文面向舆情热点，尤其是以网络新闻为代表的信息，利用WebGIS及相关技术，探索了其可视化分析系统的开发与应用前景，利用主流Web开发技术，结合多种分析手段，实现了基于地理位置的舆情可视化分析系统开发。系统结合GIS技术与舆情数据，利用多种可视化技术给数据赋能，为用户提供了广区域、大格局尺度下的洞见，讨论了将GIS 可视化互联网舆情监测系统应用于网络舆情监测工作中的潜能。</p>
+							</article>
+						<!-- Elements -->
+							<article id="mapv">
+								<h2 class="major">MapV</h2>
+							<div id="mapvmap" ></div>
+							<p>MapV是一款基于百度地图的大数据可视化开源库，可以用来展示大量的点、线、面的数据，每种数据也有不同的展示类型,如直接打点、热力图、网格、聚合等方式展示数据。如图所示为借助于MapV JS API所实现的各类可视化效果。</p>
+							</article>
+						<!-- Elements -->
+							<article id="folium">
+								<h2 class="major">Folium</h2>
+    						<div class="folium-map" id="foliummap" ></div>
+    						<p>Folium是JS上著名的地理信息可视化库leaflet.js为Python提供的接口，通过它可以调用leaflet的相关功能，基于内建的OSM或自行获取的OSM资源和地图原件进行地理信息内容的可视化，以及制作优美的可交互地图。</p>
+							</article>
+						<!-- Elements -->
+							<article id="echart">
+								<h2 class="major">Echart</h2>
+    						<div id="echartmap"></div>
+    						<script type="text/javascript" src="assets/js/echarts.js"></script>
+    						<p>ECharts是百度的一个开源的数据可视化工具，属于纯Javascript的图表库，能够在PC 端和移动设备上流畅运行，兼容当前绝大部分浏览器（IE6/7/8/9/10/11，chrome，firefox，Safari等），底层依赖轻量级的 Canvas 库 ZRender。ECharts 提供直观，生动，可交互，可高度个性化定制的数据可视化图表。</p>
+							</article>
+						<!-- Elements -->
+							<article id="echartcate">
+								<h2 class="major">Echart</h2>
+    						<div id="echartscatemap"></div>
+    						<script type="text/javascript" src="assets/js/echartscate.js"></script>
+    						<p>本系统应用ECharts从两种方式对数据进行可视化，如图所示。借助热度地图，可以发现所获得的舆情信息主要聚焦于我国一线城市。而借助于分省点状标注图，则可以对各省信息分布情况及相对数量有更深入理解。</p>
+							</article>
+						<!-- Elements -->
+							<article id="wordcloud">
+								<h2 class="major">WordCloud</h2>
+							<span class="image main"><img style="height: 50%;width: 50%" src="images/wordcloud.png" alt="" /></span>
+							<p>WordCloud是使用Python语言开发的词云图生成模块。词云，也叫文字云，是对文本中出现频率较高的“关键词”予以视觉化的展现，词云图过滤掉大量的低频低质的文本信息，使得浏览者只要一眼扫过文本就可领略文本的主旨。</p>
+							</article>
+						<!-- Elements -->
+							<article id="d3">
+								<h2 class="major">D3</h2>
+    						<div id="d3map"  style="height: 50%;width: 50%"></div>
+    						<p>D3是基于数据的文档操作javascript库，能够把数据和HTML、SVG、CSS结合起来，创造出可交互的数据图表。D3所强调的Web标准帮助开发者在无需捆绑任何专有框架的前提下，结合强大的可视化组件及其数据驱动的DOM操纵方法，充分利用现代浏览器的全部功能。</p>
+							</article>
+						<!-- About -->
+							<article id="about">
+								<h2 class="major">About</h2>
+								<span class="image main"><img style="height: 30%;width: 30%"  src="images/about.jpg" alt="" /></span>
+								<p>地信四班 丁家祺 2016301110170</p>
+							</article>
+					</div>
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy;Design: <a href="https://html5up.net">JiaqiDing</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
+
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=jT7C6BbXAaMIa3ldR6VDYr08Wy4rYy9o"></script>
+<script type="text/javascript" src="assets/js/mapv.js"></script>
+<script type="text/javascript" src="assets/js/heatmap.js"></script>
+<script type="text/javascript" src="assets/js/foliummap.js"></script>
+<script type="text/javascript" src="assets/js/d3map.js"></script>
+
+
+
